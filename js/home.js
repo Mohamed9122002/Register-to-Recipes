@@ -165,9 +165,13 @@ const getRecipes = async category => {
   loading.classList.remove("d-none");
   let recipe = await fetch(`${baseUrl}?q=${category}`);
   let data = await recipe.json();
-  console.log(data);
-  displayRecipes(data.recipes);
+  
+  if (recipe.status !== 400) {
+    displayRecipes(data.recipes);
+  }
   loading.classList.add("d-none");
+
+  console.log(data);
 };
 getRecipes("pizza");
 const displayRecipes = data => {
@@ -208,15 +212,14 @@ const layOut = () => {
   localStorage.removeItem("userName");
 };
 
-
-const displayAllRecipe = ()=>{
-  let result = '';
+const displayAllRecipe = () => {
+  let result = "";
   for (const recipe of allRecipe) {
     console.log(recipe);
     result += `
     <option value="${recipe}"/>
     `;
   }
-   document.getElementById("category").innerHTML = result;
-}
+  document.getElementById("category").innerHTML = result;
+};
 displayAllRecipe();
