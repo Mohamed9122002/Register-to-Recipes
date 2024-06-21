@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+</head>
+<body>
+    <span class="position-fixed bottom-0 end-0 m-3 z-3 ">
+        <i role="button" id="mode" class="fa-regular fa-sun  fa-xl text-white p-3"></i>
+    </span>
+    <main class="container my-5 text-center register min-vh-100">
+        <form class="group m-auto w-75  p-5">
+            <h1>Register to Recipes</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-data">
+                        <input id="firstName" class="form-control my-3" placeholder="Enter your firstName" type="text">
+                        <ul class="alert alert-danger p-0 invalid-feedback">
+                            <li>First Name Is Required</li>
+                            <li>Minmum Length 2 and Maxmum 20</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-data">
+                        <input id="lastName" class="form-control my-3" placeholder="Enter your lastName" type="text">
+                        <ul class="alert alert-danger p-0 invalid-feedback">
+                            <li>Last Name Is Required</li>
+                            <li>Minmum Length 2 and Maxmum 20</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-data">
+                <input id="signUpEmail" class="form-control my-3" placeholder="Enter your email" type="email">
+                <ul class="alert alert-danger p-0 invalid-feedback">
+                    <li>Email Is Required</li>
+                    <li>InValid Email Formate</li>
+                </ul>
+            </div>
+            <div class="form-data">
+                <input id="signUpPassword" class="form-control my-3" placeholder="Enter password" type="password">
+                <ul class="alert alert-danger p-0 invalid-feedback">
+                    <li>Password Is Required</li>
+                    <li>Minimum eight characters, at least one letter and one number</li>
+                </ul>
+            </div>
+            <p>
+                <span id="incorrect" class="text-danger m-3 d-none">All inputs is required</span>
+                <span id="success" class="text-success m-3 d-none">All inputs is success</span>
+                <span id="exist" class="text-danger m-3 d-none">email is exit</span>
+            </p>
+            <button id="btn-signUp" class=" btn btn-outline-info w-100 my-3">Sign Up</button>
+            <div class="d-flex justify-content-center align-items-center m-1">
+                <p class="text-white lead m-2 ">Already a member? </p>
+                <a class="text-white btn btn-warning" href="./index.html">LogIn</a>
+            </div>
+        </form>
+    </main>
+    <script src="./js/singup.js"></script>
+</body>
+
+</html>

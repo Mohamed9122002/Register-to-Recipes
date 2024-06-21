@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+</head>
+
+<body>
+    <div class="container my-5 text-center ">
+        <div class="group m-auto w-100  p-5">
+            <h1>LogIn To Recipes</h1>
+            <div class="form-data">
+                <input id="signInEmail" class="form-control my-3 " placeholder="Enter your email" type="text"
+                    name="email">
+                <ul class="alert alert-danger p-0 invalid-feedback">
+                    <li>Email Is Required</li>
+                    <li>InValid Email Formate</li>
+                </ul>
+
+            </div>
+            <div class="form-data">
+                <input id="signInPassword" class="form-control my-3" placeholder="Enter your password" type="password"
+                    name="password">
+                <ul class="alert alert-danger p-0 invalid-feedback">
+                    <li>Email Is Required</li>
+                    <li>InValid Email Formate</li>
+                </ul>
+            </div>
+            <p>
+                <span id="success" class="text-success m-3 d-none">Success</span>
+                <span id="exist" class="text-danger m-3 d-none">email and password note found</span>
+            </p>
+            <button id="btn-login" class=" btn btn-outline-info w-100 my-3">Login</button>
+            <div class="d-flex justify-content-center align-items-center m-1 ">
+                <p class="text-white lead m-2 ">Create Account</p>
+                <a class="text-white btn btn-warning" href="./signup.html">SignUp</a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
