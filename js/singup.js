@@ -12,21 +12,35 @@ if (getUsers === null) {
 } else {
   signUpArray = JSON.parse(getUsers);
 }
-
 // ! =============> Events ===============>
-
-btnSignUp.addEventListener("click", function() {
-  if (allInputsValidation(firstName) && allInputsValidation(lastName)
-  && allInputsValidation(signUpEmail) &&allInputsValidation(signUpPassword)) {
-  singUp();
-  clearInputs();
-  }
-
-});
 document.querySelector("form").addEventListener("submit", function(event) {
   event.preventDefault();
 });
+btnSignUp.addEventListener("click", function() {
+  if (
+    allInputsValidation(firstName) &&
+    allInputsValidation(lastName) &&
+    allInputsValidation(signUpEmail) &&
+    allInputsValidation(signUpPassword)
+  ) {
+    singUp();
+  }
+});
 
+document.addEventListener("keyup", function(e) {
+  // console.log(e.code);
+  if (
+    allInputsValidation(firstName) &&
+    allInputsValidation(lastName) &&
+    allInputsValidation(signUpEmail) &&
+    allInputsValidation(signUpPassword)
+  ) {
+    e.preventDefault();
+    if (e.code === "NumpadEnter" || e.code === "Enter") {
+      singUp();
+    }
+  }
+});
 // ! =============> functions  ===============>
 function emailCheck() {
   for (var i = 0; i < signUpArray.length; i++) {
@@ -70,13 +84,6 @@ function singUp() {
   }
 }
 
-function clearInputs() {
-  firstName.value = "";
-  lastName.value = "";
-  signUpEmail.value = "";
-  signUpPassword.value = "";
-}
-
 // ! =============> validation ===============>
 function allInputsValidation(element) {
   var regex = {
@@ -90,23 +97,23 @@ function allInputsValidation(element) {
     element.classList.add("is-valid");
     element.classList.remove("is-invalid");
     return true;
-  }else{
-        element.classList.add("is-invalid");
-        element.classList.remove("is-valid");
-        return false;
+  } else {
+    element.classList.add("is-invalid");
+    element.classList.remove("is-valid");
+    return false;
   }
 }
 // ! =============> Events ===============>
-firstName.addEventListener('input',function(){
+firstName.addEventListener("input", function() {
   // console.log(this);
   allInputsValidation(this);
-})
-lastName.addEventListener("input",function(){
+});
+lastName.addEventListener("input", function() {
   allInputsValidation(this);
-})
-signUpEmail.addEventListener("input",function(){
+});
+signUpEmail.addEventListener("input", function() {
   allInputsValidation(this);
-})
-signUpPassword.addEventListener("input",function(){
+});
+signUpPassword.addEventListener("input", function() {
   allInputsValidation(this);
 });

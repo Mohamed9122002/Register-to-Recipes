@@ -95,3 +95,6 @@ header #home {
 }
 
 /***** End Loader *****/
+ul{
+    list-style: none;
+}
