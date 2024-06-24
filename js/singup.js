@@ -29,14 +29,14 @@ btnSignUp.addEventListener("click", function() {
 
 document.addEventListener("keyup", function(e) {
   // console.log(e.code);
-  if (
-    allInputsValidation(firstName) &&
-    allInputsValidation(lastName) &&
-    allInputsValidation(signUpEmail) &&
-    allInputsValidation(signUpPassword)
-  ) {
-    e.preventDefault();
-    if (e.code === "NumpadEnter" || e.code === "Enter") {
+
+  if (e.code === "NumpadEnter" || e.code === "Enter") {
+    if (
+      allInputsValidation(firstName) &&
+      allInputsValidation(lastName) &&
+      allInputsValidation(signUpEmail) &&
+      allInputsValidation(signUpPassword)
+    ) {
       singUp();
     }
   }
